@@ -11,23 +11,46 @@
 <body>
 	<div class="container">
 	<h1 class="thin theme-color">Music Player</h1>
-	<hr/>
 		<div class="rows music-player">
-			<div class="col-md-5">
-				<div class="col-2">
-					<img src="" class="img-circle player-avatar">
+			<div class="free-5"></div>
+			<div class="col-md-4" style="padding: 0;">
+				<div class="col-md-2">
+					<img src="images/ts.png" class="img-circle player-avatar">
 				</div>
-				<div class="col-8"></div>
+				<div class="col-md-8 center controls" style="font-size: 30px;">
+					<div class="free-5"></div>
+					<i class="mdi mdi-skip-previous"></i>
+					<i class="mdi mdi-rewind"></i>
+					<i class="mdi mdi-play-circle-outline" style="font-size:40px;vertical-align: center;"></i>
+					<i class="mdi mdi-pause-circle-outline" style="display: none;"></i>
+					<i class="mdi mdi-fast-forward"></i>
+					<i class="mdi mdi-skip-next"></i>
+				</div>
 			</div>
 			<div class="col-md-2 song-title">
 				<h6>Song title</h6>
 				<p>Juliana Kanyomozi</p>
 			</div>
-			<div class="col-md-5">
-				
+			<div class="col-md-4">
+				<div class="free-20"></div>
+				<font style="font-size:12px; color: #ccc; float: left;">0:30</font> <font style="font-size:12px; color: #ccc; float: right;">3:59</font>
+				<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0" style="width: 100%;">
+			</div>
+			<div class="col-md-2">
+				<div class="free-20"></div>
+				<i class="fa fa-volume-up" style="float: left; font-size:20px; color:#999;"></i>
+				<i class="fa fa-volume-off" style="float: left; font-size:20px; color:#999; display: none;"></i>
+				<input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="70" tabindex="0">
 			</div>
 			<div class="free-0"></div>
 		</div>
 	</div>
+
+
+
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/material.min.js"></script>
 </body>
 </html>
