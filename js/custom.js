@@ -27,20 +27,17 @@ function loadSong()
 	setTimeout(setDuration(), 1000);
 	seekSong();
 	song.play();
-
-	var d = song.duration;
-	console.log(d);
 }
 
 
-setTimeout(updateSongSlider(), 1000);
+setInterval(updateSongSlider, 1000);
 
 //function to update song slider
 function updateSongSlider()
 {
 	var currentTime = Math.round(song.currentTime);
 	songSlider.val(currentTime);
-	currentTime.html = convertTime(currentTime);
+	cTime.html(convertTime(currentTime));
 }
 
 //this function adjusts volume according to the volume slider
@@ -71,8 +68,11 @@ function convertTime(secs)
 
 function setDuration()
 {
-	var d = Math.floor(song.duration)
-	dur.html(convertTime(d));
+	song.addEventListener('loadedmetadata', function() {
+		var d = Math.floor(song.duration);
+		songSlider.attr('max', d);
+		dur.html(convertTime(d));
+	});
 }
 
 function playPause()
