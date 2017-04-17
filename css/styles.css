@@ -58,19 +58,32 @@ body{
     padding:0px;
     border:none;
 }
+
+.song-title{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}
 .song-title h6{
     font-size: 16px;
     margin: 0;
 }
 .song-title p{
     font-size: 12px;
+    margin:0;
 }
 
 .player-avatar{
     height: 50px;
+    border:2px solid #555;
 }
 .center{
     text-align: center;
+}
+
+#nextSong{
+    font-size: 11px;
+    color:#999;
 }
 
 .controls i{
