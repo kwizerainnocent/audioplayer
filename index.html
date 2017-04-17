@@ -13,11 +13,11 @@
 	<h1 class="thin theme-color">Music Player</h1>
 		<div class="rows music-player mdl-shadow--4dp">
 			<div class="free-5"></div>
-			<div class="col-md-4" style="padding: 0;">
-				<div class="col-md-2">
+			<div class="col-md-4 col-sm-4 col-xs-12" style="padding: 0;">
+				<div class="col-md-2 col-sm-2 col-xs-2">
 					<img src="images/ts.png" class="img-circle player-avatar">
 				</div>
-				<div class="col-md-8 center controls" style="font-size: 30px;">
+				<div class="col-md-8 col-sm-8 col-xs-8 center controls" style="font-size: 30px;">
 					<div class="free-5"></div>
 					<i class="mdi mdi-skip-previous" onclick="previous()"></i>
 					<i class="mdi mdi-rewind" onclick="decreasePlayback()"></i>
@@ -27,17 +27,17 @@
 					<i class="mdi mdi-skip-next" onclick="next()"></i>
 				</div>
 			</div>
-			<div class="col-md-2 song-title">
+			<div class="col-md-2 col-sm-2 col-xs-12 song-title">
 				<h6 id="songTitle">Song title</h6>
 				<!-- <p>Juliana Kanyomozi</p> -->
 				<font id="nextSong"></font>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-4 col-sm-4 col-xs-8">
 				<div class="free-20"></div>
 				<font id="cTime" style="font-size:12px; color: #ccc; float: left;"></font> <font id="duration" style="font-size:12px; color: #ccc; float: right;"></font>
 				<input class="mdl-slider mdl-js-slider" id="songSlider" type="range" min="0" step="1" value="0" tabindex="0" onmouseup="seekSong()" style="width: 100%;">
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-2 col-sm-2 col-xs-4">
 				<div class="free-20"></div>
 				<i class="fa fa-volume-up" id="voice" onclick="mute()" style="float: left; font-size:20px; color:#999; cursor: pointer;"></i>
 				<i class="fa fa-volume-off" id="mute" onclick="unmute()" style="float: left; font-size:20px; color:#999; display: none; cursor: pointer;"></i>

@@ -1,4 +1,4 @@
-var songs = ['barcelona.mp3', 'divide.mp3', 'supermarket.mp3','nancy.mp3'];
+var songs = ['barcelona.mp3', 'divide.mp3', 'supermarket.mp3','nancy.mp3', 'anyway.mp3'];
 
 var songTitle = $('#songTitle');
 var songSlider = $('#songSlider');
@@ -21,11 +21,10 @@ function loadSong()
 {
 	song.src = 'music/'+songs[currentSong];
 	songTitle.html((currentSong + 1)+ ' . '+ songs[currentSong]);
-	nextSong.html('Next song :'+ songs[currentSong + 1 % songs.length]);
+	nextSong.html('Next song :'+ songs[(currentSong + 1) % songs.length]);
 	song.playbackRate = 1;
 	song.volume = volumeSlider.val();
 	setTimeout(setDuration(), 1000);
-	seekSong();
 	song.play();
 }
 
@@ -38,6 +37,9 @@ function updateSongSlider()
 	var currentTime = Math.round(song.currentTime);
 	songSlider.val(currentTime);
 	cTime.html(convertTime(currentTime));
+	if (song.ended) {
+		next();
+	}
 }
 
 //this function adjusts volume according to the volume slider
@@ -92,7 +94,9 @@ function playPause()
 //function to play the next song
 function next()
 {
-	currentSong = currentSong + 1 % songs.length;
+	currentSong = (currentSong + 1) % songs.length;
+	song.currentTime = 0;
+	songSlider.val(0);
 	loadSong();
 }
 
@@ -101,6 +105,8 @@ function previous()
 {
 	currentSong --;
 	currentSong = (currentSong < 0) ? songs.length - 1 : currentSong;
+	song.currentTime = 0;
+	songSlider.val(0);
 	loadSong();
 }
 
